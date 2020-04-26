@@ -1,0 +1,46 @@
+Parsing Inputs...
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  0
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 0
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              1
+-min_occurrence             0
+-step                       -1
+-order_by                   float_ops
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     float_ops
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+scope: The nodes in the model graph are organized by their names, which is hierarchical like filesystem.
+flops: Number of float operations. Note: Please read the implementation for the math behind it.
+
+Profile:
+node name | # float_ops
+_TFProfRoot (--/1.25k flops)
+  bn1/batchnorm/Rsqrt (324/324 flops)
+  add_4 (200/200 flops)
+  bn1/batchnorm/add (162/162 flops)
+  bn1/batchnorm/mul (162/162 flops)
+  bn1/batchnorm/mul_2 (162/162 flops)
+  bn1/batchnorm/sub (162/162 flops)
+  add_7 (80/80 flops)
+  rnn_1/gru1/Equal (1/1 flops)
+  rnn_2/gru2/Equal (1/1 flops)
+
+======================End of Report==========================
+FLOP after freezing 1254
